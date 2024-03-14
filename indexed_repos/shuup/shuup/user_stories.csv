@@ -1,0 +1,11 @@
+Title,User Type,Description,Status
+"Browse Products","Shopper","I want to browse through categories of products so that I can find items I might be interested in.",completed
+"Search Functionality","Shopper","I want to use a search bar to find specific products by typing keywords so that I can quickly find what I'm looking for.",pending
+"View Product Details","Shopper","I want to click on products to view detailed information such as price descriptions specifications and customer reviews so that I can make informed decisions.",not started
+"Create an Account","New User","I want to create an account using my email or social media profiles so that I can save my preferences and order history.",not started
+"Password Recovery","Registered User","I want to recover my forgotten password through my email so that I can regain access to my account.",pending
+"Add to Cart","Shopper","I want to add products to my shopping cart so that I can purchase multiple items in a single transaction.",completed
+"Checkout Process","Shopper","I want to easily proceed to checkout enter my shipping and payment information and confirm my order so that I can complete my purchase.",completed
+"Order Tracking","Customer","I want to track my order status after I have made a purchase so that I know when to expect delivery.",not started
+"Leave Reviews","Customer","I want to leave reviews for products I have purchased so that I can share my experience with other shoppers.",not started
+"Receive Recommendations","Shopper","I want to receive personalized product recommendations based on my browsing and purchase history so that I can discover items that match my interests.",completed

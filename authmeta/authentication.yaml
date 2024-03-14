@@ -1,0 +1,18 @@
+cookie:
+  expiry_days: 0
+  key: $2b$12$1uIe2d0uaJ8W5nh3k9eNouWNkPWo8yYRDx/bFS8MmbiXd/gDhpgGC
+  name: streamlit_auth
+credentials:
+  usernames:
+    junaid:
+      email: syed.juned.ali@tuwien.ac.at
+      llm: codellama
+      name: Junaid Ali
+      password: $2b$12$djuaLMWTw.QQAQJX1UVK5ekKcV5LX9fpWHC67Djj8mXrUrJp2Qoue
+      pw: N8H;w@P`Aneb
+    varun:
+      email: varun.naganathan@microsoft.com
+      llm: gpt4
+      name: Varun Naganathan
+      password: $2b$12$H0nPs3SybCX.M16AO/4si.2LELe77wL3R3TCdqDTG4K0ON8DKjukq
+      pw: oSlgr4$jh3-x

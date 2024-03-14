@@ -1,0 +1,216 @@
+{   
+    "user_stories": [
+        {
+            "title": "Browse Products",
+            "userType": "Shopper",
+            "description": "I want to browse through categories of products so that I can find items I might be interested in.",
+            "status": "completed",
+            "development_plan": [
+                "Design and implement category navigation",
+                "Create product listing pages",
+                "Implement filtering and sorting options"
+            ],
+            "relevant_links": [
+                {"label": "Design Mock Ups", "link": "https://www.example.com/design-mockups"},
+                {"label": "Product API docs", "link": "https://www.example.com/product-api-docs"}
+            ]
+        },
+        {
+            "title": "Search Functionality",
+            "userType": "Shopper",
+            "description": "I want to use a search bar to find specific products by typing keywords so that I can quickly find what I'm looking for.",
+            "status": "pending",
+            "development_plan": [
+                "Implement search bar component",
+                "Integrate search functionality with product database",
+                "Optimize search algorithm for speed and accuracy"
+            ],
+            "relevant_links": [
+                {"label": "Search API documentation", "link": "https://www.example.com/search-api-docs"},
+                {"label": "Performance optimization guidelines", "link": "https://www.example.com/performance-optimization"}
+            ]
+        },
+        {
+            "title": "View Product Details",
+            "userType": "Shopper",
+            "description": "I want to click on products to view detailed information such as price, descriptions, specifications, and customer reviews so that I can make informed decisions.",
+            "status": "not started",
+            "development_plan": [
+                "Design and implement product detail page layout",
+                "Retrieve and display product information from database",
+                "Integrate customer review system"
+            ],
+            "relevant_links": [
+                {"label": "Product detail page wireframes", "link": "https://www.example.com/product-detail-wireframes"},
+                {"label": "Review system API documentation", "link": "https://www.example.com/review-api-docs"}
+            ]
+        },
+        {
+            "title": "Create an Account",
+            "userType": "New User",
+            "description": "I want to create an account using my email or social media profiles so that I can save my preferences and order history.",
+            "status": "not started",
+            "development_plan": [
+                "Design and implement user registration form",
+                "Implement email and social media authentication",
+                "Create user profile database schema"
+            ],
+            "relevant_links": [
+                {"label": "User registration flowchart", "link": "https://www.example.com/registration-flowchart"},
+                {"label": "Authentication API documentation", "link": "https://www.example.com/authentication-api-docs"}
+            ]
+        },
+        {
+            "title": "Password Recovery",
+            "userType": "Registered User",
+            "description": "I want to recover my forgotten password through my email so that I can regain access to my account.",
+            "status": "pending",
+            "development_plan": [
+                "Design and implement password recovery form",
+                "Integrate email notification system",
+                "Implement password reset functionality"
+            ],
+            "relevant_links": [
+                {"label": "Password recovery wireframes", "link": "https://www.example.com/password-recovery-wireframes"},
+                {"label": "Email notification system documentation", "link": "https://www.example.com/email-notification-docs"}
+            ]
+        },
+        {
+            "title": "Add to Cart",
+            "userType": "Shopper",
+            "description": "I want to add products to my shopping cart so that I can purchase multiple items in a single transaction.",
+            "status": "completed",
+            "development_plan": [
+                "Design and implement cart icon and functionality",
+                "Create cart management system",
+                "Integrate cart with checkout process"
+            ],
+            "relevant_links": [
+                {"label": "Cart management API documentation", "link": "https://www.example.com/cart-api-docs"},
+                {"label": "Checkout process integration guidelines", "link": "https://www.example.com/checkout-integration"}
+            ]
+        },
+        {
+            "title": "Checkout Process",
+            "userType": "Shopper",
+            "description": "I want to easily proceed to checkout, enter my shipping and payment information, and confirm my order so that I can complete my purchase.",
+            "status": "completed",
+            "development_plan": [
+                "Design and implement checkout page layout",
+                "Create shipping and payment form components",
+                "Integrate order confirmation system"
+            ],
+            "relevant_links": [
+                {"label": "Checkout page wireframes", "link": "https://www.example.com/checkout-wireframes"},
+                {"label": "Order confirmation API documentation", "link": "https://www.example.com/order-confirmation-docs"}
+            ]
+        },
+        {
+            "title": "Order Tracking",
+            "userType": "Customer",
+            "description": "I want to track my order status after I have made a purchase so that I know when to expect delivery.",
+            "status": "not started",
+            "development_plan": [
+                "Design and implement order tracking page",
+                "Integrate order status updates from shipping carriers",
+                "Create notification system for order updates"
+            ],
+            "relevant_links": [
+                {"label": "Order tracking wireframes", "link": "https://www.example.com/order-tracking-wireframes"},
+                {"label": "Shipping carrier API documentation", "link": "https://www.example.com/shipping-carrier-docs"}
+            ]
+        },
+        {
+            "title": "Leave Reviews",
+            "userType": "Customer",
+            "description": "I want to leave reviews for products I have purchased so that I can share my experience with other shoppers.",
+            "status": "not started",
+            "development_plan": [
+                "Design and implement review submission form",
+                "Create review database schema",
+                "Integrate review display on product detail pages"
+            ],
+            "relevant_links": [
+                {"label": "Review submission flowchart", "link": "https://www.example.com/review-submission-flowchart"},
+                {"label": "Review database schema documentation", "link": "https://www.example.com/review-database-docs"}
+            ]
+        },
+        {
+            "title": "Receive Recommendations",
+            "userType": "Shopper",
+            "description": "I want to receive personalized product recommendations based on my browsing and purchase history",
+            "status": "not started",
+            "development_plan": [
+                "Design and implement recommendation engine",
+                "Integrate recommendation system with user profiles",
+                "Display recommendations on relevant pages"
+            ],
+            "relevant_links": [
+                {"label": "Recommendation engine documentation", "link": "https://www.example.com/recommendation-engine-docs"},
+                {"label": "User profile integration guidelines", "link": "https://www.example.com/user-profile-integration"}
+            ]
+        }
+    ],
+    "sprints": [
+        {
+            "id": 1,
+            "startDate": "2021-01-01",
+            "endDate": "2021-01-14",
+            "status": "completed"
+        },
+        {
+            "id": 2,
+            "startDate": "2021-01-15",
+            "endDate": "2021-01-28",
+            "status": "in progress"
+        },
+        {
+            "id": 3,
+            "startDate": "2021-01-29",
+            "endDate": "2021-02-11",
+            "status": "pending"
+        }
+    ],
+    "insights": [
+        {
+            "title": "User Story Dependency",
+            "description": "User Story 4 (Create an Account) is dependent on User Story 5 (Password Recovery) because implementing password recovery requires an existing account creation framework."
+        },
+        {
+            "title": "External Project Impact",
+            "description": "User Story 7 (Checkout Process) might be affected by Project THANOS, an internal code name for a new payment gateway integration project, altering how payment information is processed."
+        },
+        {
+            "title": "Scope Modification",
+            "description": "User Story 5 (Password Recovery) requires the addition of four new classes for security measures, which were initially out of scope but now deemed necessary for enhanced security protocols."
+        },
+        {
+            "title": "Cross-functional Requirement",
+            "description": "User Story 3 (View Product Details) and User Story 9 (Leave Reviews) are closely linked, as displaying reviews on product detail pages enhances informed decision-making for customers."
+        },
+        {
+            "title": "Performance Consideration",
+            "description": "User Story 2 (Search Functionality) must be optimized for speed and accuracy, as it significantly impacts user satisfaction and engagement with the application."
+        },
+        {
+            "title": "User Experience Enhancement",
+            "description": "User Story 10 (Receive Recommendations) and User Story 12 (Save for Later) can be combined to enhance user experience by using saved items as part of the data to generate personalized recommendations."
+        },
+        {
+            "title": "Data Privacy Concerns",
+            "description": "User Story 4 (Create an Account) and User Story 13 (Edit Profile Information) must adhere to global data protection regulations (e.g., GDPR, CCPA), affecting how user data is stored and managed."
+        },
+        {
+            "title": "Third-party Integration",
+            "description": "User Story 11 (Apply Discount Codes) might require integration with third-party coupon and discount code providers, introducing dependencies on external APIs."
+        },
+        {
+            "title": "Customer Support Scalability",
+            "description": "User Story 14 (Contact Support) highlights the need for a scalable customer support system, potentially integrating AI chatbots to handle common queries before escalating to human support."
+        },
+        {
+            "title": "Technical Debt Consideration",
+            "description": "Implementing User Story 15 (Return and Refund Process) might introduce technical debt if not aligned with the current order management system, necessitating future refactorings to ensure system integrity."
+        }
+    ]    
+}
