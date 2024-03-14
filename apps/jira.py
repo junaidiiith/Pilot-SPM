@@ -2,6 +2,8 @@ import json
 import pandas as pd
 import streamlit as st
 from llm_chat import add_chat
+from streamlit_extras.stylable_container import stylable_container
+from styling import bg_color_template, st_markdown_template, add_properties_to_css
 from constants import SPRINT
 
 MAX_COLS = 11
@@ -10,25 +12,57 @@ LEFT_END = CENTRAL - min(2, CENTRAL)
 RIGHT_END = CENTRAL + min(2, CENTRAL)
 user_stories_cols = ["title", "userType","description"]
 
+kanban_bg_map = {
+    "completed": "#d2fad6",
+    "not started": "#f5bfc3",
+    "pending": "#fae2c0",
+    "insights": "#cacecf"
+}
+
+
+def fix_story(**kwargs):
+    print("Fixing insight", kwargs)
+    st.session_state['current_page'] = SPRINT
+    st.session_state['story_to_fix'] = kwargs
+    st.rerun()
 
 def print_insights(insights_list):
     st.markdown("### Insights")
     st.markdown(f"**Total Insights:** {len(insights_list)}")
     for i, insight in enumerate(insights_list):
-        title, description = insight['title'], insight['description']
-        st.markdown(f"#### **{i + 1}.** {title}")
-        st.markdown(f"**Description:** {description}")
-        st.markdown("---")
-
-
+        with stylable_container(
+            key=f"markdown_container_insight",
+            css_styles=[
+                add_properties_to_css(bg_color_template, color=kanban_bg_map['insights']),
+                st_markdown_template
+            ]
+        ):
+            title, description = insight['title'], insight['description']
+            st.markdown(f"#### **{i + 1}.** {title}")
+            st.markdown(f"**Description:** {description}")
+            
+            
 def print_df(stories_df, key, value):
-    df = stories_df.loc[stories_df[key] == value][user_stories_cols]
-    for i, story in df.iterrows():
-        st.markdown(f"#### {i}. {story['title']}")
-        st.markdown(f"**User Type:** {story['userType']}")
-        st.markdown(f"**Description:** {story['description']}")
+    color = kanban_bg_map[value]
+    css_style = add_properties_to_css(bg_color_template, color=color)
+    # print(css_style)
+    df = stories_df.loc[stories_df[key] == value]
     
-    st.markdown("---")
+    for i, story in df.iterrows():
+        with stylable_container(
+            key=f"markdown_container_{value.replace(' ', '_')}",
+            css_styles=[
+                css_style,
+                st_markdown_template
+            ]
+        ):
+            st.markdown(f"#### {i}. {story['title']}")
+            st.markdown(f"**User Type:** {story['userType']}")
+            st.markdown(f"**Description:** {story['description']}")
+            story_dict = dict(story)
+            st.button("⚙️ Improvements", key=f"like_{i}", on_click=fix_story, kwargs=story_dict)
+    
+    # st.markdown("---")
 
 
 def app(llm_config):
@@ -51,7 +85,10 @@ def app(llm_config):
     with cols[CENTRAL]:
         go = st.button("Go")
     
-    if go:
+    came_from_sprint = st.session_state.get('came_from_sprint', False)
+
+    if go or came_from_sprint:
+        st.session_state['came_from_sprint'] = False
         if user_stories_file is not None:
             with open('tmp/user_stories.json', 'wb') as f:
                 f.write(user_stories_file.getvalue())

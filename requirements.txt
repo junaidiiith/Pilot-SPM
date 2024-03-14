@@ -2,3 +2,4 @@ streamlit
 streamlit_authenticator
 streamlit_option_menu
 openai
+streamlit_extras

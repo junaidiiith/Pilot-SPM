@@ -58,25 +58,25 @@ if authentication_status:
     authenticator.logout('Logout', 'sidebar')
     st.sidebar.title(f"Welcome {name}!")
 
-    selected = option_menu(
-        menu_title=None,  # required
-        options=["Home", "About", "Contact"],  # required
-        icons=["house", "book", "envelope"],  # optional
-        menu_icon="cast",  # optional
-        default_index=0,  # optional
-        orientation="horizontal",
-        styles={
-            "container": {"padding": "0!important", "background-color": "#2596be"},
-            "icon": {"color": "orange", "font-size": "25px"},
-            "nav-link": {
-                "font-size": "25px",
-                "text-align": "left",
-                "margin": "0px",
-                "--hover-color": "#e38e3a",
-            },
-            "nav-link-selected": {"background-color": "#2596be"},
-        },
-    )
+    # selected = option_menu(
+    #     menu_title=None,  # required
+    #     options=["Home", "About", "Contact"],  # required
+    #     icons=["house", "book", "envelope"],  # optional
+    #     menu_icon="cast",  # optional
+    #     default_index=0,  # optional
+    #     orientation="horizontal",
+    #     styles={
+    #         "container": {"padding": "0!important", "background-color": "#2596be"},
+    #         "icon": {"color": "orange", "font-size": "25px"},
+    #         "nav-link": {
+    #             "font-size": "25px",
+    #             "text-align": "left",
+    #             "margin": "0px",
+    #             "--hover-color": "#e38e3a",
+    #         },
+    #         "nav-link-selected": {"background-color": "#2596be"},
+    #     },
+    # )
 
     # if selected == "Home":
     #     st.session_state['current_page'] = GITHUB
