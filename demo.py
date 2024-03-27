@@ -14,7 +14,6 @@ from apps import github, jira, sprint, user_stories
 from constants import GITHUB, JIRA, SPRINT, USER_STORIES
 
 
-
 app = MultiApp()
 app.add_app(GITHUB, github.app)
 app.add_app(JIRA, jira.app)

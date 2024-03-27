@@ -16,7 +16,7 @@
         "type": "anyscale"
     },
     "codellama": {
-        "model_id": "codellama/CodeLlama-34b-Instruct-hf",
+        "model_id": "codellama/CodeLlama-70b-Instruct-hf",
         "type": "anyscale"
     },
     "llm_embedder": {
