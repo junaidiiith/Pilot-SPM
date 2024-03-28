@@ -37,6 +37,7 @@ def summarize_docs(llm, document, node_prompt, combine_prompt):
 
 
 def get_prompt_response(llm, prompt, node_prompt, combine_prompt):
+    # return f"{prompt}: Error while generating summary"
     num_tokens = len(prompt.split())
     if num_tokens >= TOKEN_LIMIT:
         response = summarize_docs(llm, prompt, node_prompt, combine_prompt)
@@ -62,6 +63,7 @@ def summarize_code_node(llm, node, nxg):
 
 def summarize_module_node(llm, node, nxg):
     # print("Summarising module: ", node)
+    
     node_summaries = list()
     for neighbour in nxg.neighbors(node):
         summary = summarize_node(llm, neighbour, nxg)
@@ -90,3 +92,4 @@ def summarize_node(llm, node, nxg):
 
     with open(f"{summaries_dir}/{node}.txt", 'w') as f:
         f.write(summary)
+
