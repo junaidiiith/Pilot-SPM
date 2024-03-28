@@ -36,6 +36,16 @@ def summarize_docs(llm, document, node_prompt, combine_prompt):
     return response
 
 
+def get_prompt_response(llm, prompt, node_prompt, combine_prompt):
+    num_tokens = len(prompt.split())
+    if num_tokens >= TOKEN_LIMIT:
+        response = summarize_docs(llm, prompt, node_prompt, combine_prompt)
+    else:
+        prompt = f"{node_prompt}\n\n{prompt}"
+        response = llm.get_response(prompt)
+    return response
+
+
 def summarize_code_node(llm, node, nxg):
     # print("Summarizing code node: ", node)
     node_type = nxg.nodes[node]['type']
@@ -45,13 +55,8 @@ def summarize_code_node(llm, node, nxg):
     combine_prompt = COMBINE_FUNCTION_SUMMARIZATION_PROMPT \
         if node_type == 'function' else COMBINE_CLASS_SUMMARIZATION_PROMPT
 
-    num_tokens = len(body.split())
-    if num_tokens >= TOKEN_LIMIT:
-        summary = summarize_docs(llm, body, node_prompt, combine_prompt)
-    else:
-        prompt = f"{node_prompt}\n\n{body}"
-        summary = llm.get_response(prompt)
-
+    summary = get_prompt_response(llm, body, node_prompt, combine_prompt)
+    nxg.nodes[node]['summary'] = summary
     return summary
 
 
@@ -65,7 +70,9 @@ def summarize_module_node(llm, node, nxg):
     combined_summary = "\n".join([f"{n}:\n{s}" for n, s in node_summaries])
     node_prompt = COMBINE_MODULE_SUMMARIZATION_PROMPT
     combine_prompt = COMBINE_MODULE_SUMMARIZATION_PROMPT
-    summary = summarize_docs(llm, combined_summary, node_prompt, combine_prompt)
+    summary = get_prompt_response(llm, combined_summary, node_prompt, combine_prompt)
+
+    nxg.nodes[node]['summary'] = summary
     return summary
 
 
@@ -80,6 +87,6 @@ def summarize_node(llm, node, nxg):
 
     node_type = nxg.nodes[node]['type']
     summary = summarize_module_node(llm, node, nxg) if node_type == 'module' else summarize_code_node(llm, node, nxg)
-    
+
     with open(f"{summaries_dir}/{node}.txt", 'w') as f:
         f.write(summary)
